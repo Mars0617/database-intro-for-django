@@ -2,10 +2,10 @@
 <h1>Pets By Owner</h1>
     <ul>
     {% for owner in owners_list %}
-        <li>{{ owner.first_name }} {{ owner.last_name }}</li>
+        <li>{{ owner.first_name }} {{ owner.last_name }} - phone {{ owner.phone }}</li>
         <ul>
         {% for pet in owner.pet_set.all %}
-            <li>{{ pet.name }} - {{ pet.type }}</li>
+            <li>{{ pet.name }} - {{ pet.type }} - born: {{ pet.birthday }}<li>
             <ul>
                 {% for weigh_in in pet.petweight_set.all %}
                     <li>{{ weigh_in.weight }}lb on {{ weigh_in.weight_date }}</li>
